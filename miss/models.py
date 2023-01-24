@@ -565,8 +565,8 @@ class MISSClassifier(RiskSLIMBase):
             x, y = self._oversampler.fit_resample(x, y)
 
         if self._feature_selector is not None:
-            self._feature_selector.mc_risk_slim_params = {"max_coefficient": self._max_coefficient,
-                                                          "max_intercept": self._max_intercept}
+            self._feature_selector._miss_params = {"max_coefficient": self._max_coefficient,
+                                                   "max_intercept": self._max_intercept}
             self._feature_selector.fit(x, y)
             cols = self._feature_selector.get_support(indices=True)
             x = x.iloc[:, cols]

@@ -1,7 +1,7 @@
 from sklearn.base import MetaEstimatorMixin, BaseEstimator
 from sklearn.feature_selection import SelectorMixin
 import numpy as np
-from .models import MISSClassifier
+from models import MISSClassifier
 
 
 class RFA(SelectorMixin, MetaEstimatorMixin, BaseEstimator):
